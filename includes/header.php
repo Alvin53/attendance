@@ -33,7 +33,7 @@ include_once 'includes/session.php';
             
           <div class=" navbar-nav ml-auto">
             <?php 
-              if(isset($_SESSION['userid'])){
+              if(!isset($_SESSION['userid'])){
             ?>
             <a class="nav-item nav-link" href="login.php">Login</a>
             <?php } else {?>
