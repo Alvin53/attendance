@@ -1,3 +1,8 @@
+<?php
+//This includes the sesion file. This file contains code that tart/resumes a session.
+//By having it in the header file, it will be included on every age, allowing session capability to be used on every page across website.
+include_once 'includes/session.php';
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -19,15 +24,23 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="viewrecords.php">View Attendees</a>
-            </li>
-          </ul>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav mr-auto ">
+            <a class="nav-link active" href="index.php">Home</a>
+            <a class="nav-link" href="viewrecords.php">View Attendees</a>
+          </div>
+            
+          <div class=" navbar-nav ml-auto">
+            <?php 
+              if(isset($_SESSION['userid'])){
+            ?>
+            <a class="nav-item nav-link" href="login.php">Login</a>
+            <?php } else {?>
+              <a class="nav-item nav-link" href="#"><span>Hello <?php echo $_SESSION['username'] ?>!</span> <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="logout.php">Logout <span class="sr-only">(current)</span></a>
+            <?php } ?>
+          </div>
         </div>
       </div>
   </nav>
