@@ -17,9 +17,8 @@ include_once 'includes/session.php';
     <title> Attendance - <?php echo $title ?></title>
   </head>
   <body> 
-  <div class="container">
+  
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
         <a class="navbar-brand" href="index.php">II CONFERENCE</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -33,15 +32,15 @@ include_once 'includes/session.php';
             
           <div class=" navbar-nav ml-auto">
             <?php 
-              if(!isset($_SESSION['userid'])){
+              if(isset($_SESSION['userid'])){
             ?>
-            <a class="nav-item nav-link" href="login.php">Login</a>
-            <?php } else {?>
-              <a class="nav-item nav-link" href="#"><span>Hello <?php echo $_SESSION['username'] ?>!</span> <span class="sr-only">(current)</span></a>
-              <a class="nav-item nav-link" href="logout.php">Logout <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="login.php">Login <span class="sr-only">(current)</span></a>
+            <?php } else { ?>
+              <a class="nav-item nav-link" href="#"><span> Welcome <?php echo $_SESSION['username'] ?>! </span> <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="logout.php">Logout <span class="sr-only">(current)</span></a>
+
             <?php } ?>
           </div>
         </div>
-      </div>
   </nav>
   <br/>

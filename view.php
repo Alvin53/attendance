@@ -7,8 +7,10 @@
 
     // GET ATTENDEE BY ID
     if(isset($_GET['id'])){
+
         $id = $_GET['id'];
         $result = $crud->getAttendeeDetails($id);
+
     } else{
         include 'includes/errormessage.php';
     }

@@ -3,6 +3,7 @@
     
     require_once 'includes/header.php'; 
     require_once 'db/conn.php'; 
+
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $username = strtolower(trim($_POST['username']));
         $password = $_POST['password']; 
