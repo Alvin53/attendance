@@ -9,9 +9,9 @@
            $this ->db = $conn;
        }
 
-       public function insertAttendees($fname, $lname, $dob, $email, $contact, $specialty){
+       public function insertAttendees($fname, $lname, $dob, $email, $gender, $specialty, $team,$avatar_path){
            try {
-               $sql = "INSERT INTO attendee(firstname,lastname,dateofbirth,emailaddress,contactnumber,specialty_id) VALUES (:fname,:lname,:dob,:email,:contact,:specialty)";
+               $sql = "INSERT INTO attendee(firstname,lastname,dateofbirth,emailaddress,gender,specialty_id,team,avatar_path) VALUES (:fname,:lname,:dob,:email,:gender,:specialty,:team,:avatar_path)";
 
                $stmt = $this->db->prepare($sql);
                // bind all placeholders to the actual values
@@ -19,8 +19,12 @@
                $stmt->bindparam(':lname',$lname);
                $stmt->bindparam(':dob',$dob);
                $stmt->bindparam(':email',$email);
-               $stmt->bindparam(':contact',$contact);
+               $stmt->bindparam(':gender',$gender);
                $stmt->bindparam(':specialty',$specialty);
+               $stmt->bindparam(':team',$team);
+               $stmt->bindparam(':avatar_path',$avatar_path);
+
+
                //execute statement
                $stmt->execute();
                return true;
@@ -32,9 +36,9 @@
            }
        }
 
-       public function editAttendee($id, $fname, $lname, $dob, $email, $contact, $specialty){
+       public function editAttendee($id, $fname, $lname, $dob, $email, $gender, $specialty){
             try{
-                $sql = "UPDATE `attendee` SET `firstname`= :fname,`lastname`=:lname,`dateofbirth`=:dob,`emailaddress`=:email,`contactnumber`=:contact,`specialty_id`=:specialty WHERE attendee_id = :id ";
+                $sql = "UPDATE `attendee` SET `firstname`= :fname,`lastname`=:lname,`dateofbirth`=:dob,`emailaddress`=:email,`gender`=:gender,`specialty_id`=:specialty WHERE attendee_id = :id ";
                 $stmt = $this->db->prepare($sql);
                 // bind all placeholders to the actual values
                 $stmt->bindparam(':id',$id);
@@ -42,7 +46,7 @@
                 $stmt->bindparam(':lname',$lname);
                 $stmt->bindparam(':dob',$dob);
                 $stmt->bindparam(':email',$email);
-                $stmt->bindparam(':contact',$contact);
+                $stmt->bindparam(':gender',$gender);
                 $stmt->bindparam(':specialty',$specialty);
                 //execute statement
                 $stmt->execute();
@@ -120,8 +124,8 @@
                  }
         
        }
+       
 
-      
 
     }
 ?>

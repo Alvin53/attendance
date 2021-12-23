@@ -9,8 +9,8 @@
         $password = $_POST['password']; 
 
         $new_password = md5($password.$username);
-        $result =$user->getUser($username,$new_password);
-        if(!$result){
+        $result =$user->getUser($new_password,$username);
+        if($result){
             echo'<div class ="alert alert-danger">Username or Password incorrect! Please Try Again.</div>';
         }else{
             $_SESSION['username'] = $username;

@@ -2,7 +2,6 @@
     $title = 'View Record';
    
     require_once 'includes/header.php'; 
-    require_once 'includes/auth_check.php';
     require_once 'db/conn.php'; 
 
     // GET ATTENDEE BY ID
@@ -15,6 +14,10 @@
         include 'includes/errormessage.php';
     }
 ?>
+     <h1 class="text-center">VIEW SPORTING PROFILE DETAILS HERE!</h1>
+
+     <img src="<?php echo empty($result['avatar_path']) ? "uploads/blank.png" : $result['avatar_path'] ; ?>" class="rounded-circle" style="width: 60%; height: 60%" />
+
  <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">
@@ -29,8 +32,9 @@
                 <p class="card-text">
                     Email Address: <?php echo $result['emailaddress'];?>            
                 </p>
+               
                 <p class="card-text">
-                  Contact Info:  <?php echo $result['contactnumber'];?>            
+                  SPORTING TEAM:  <?php echo $result['team'];?>            
                 </p>
             </div>
         </div> 

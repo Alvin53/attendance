@@ -1,13 +1,15 @@
 <?php
+/*
+
       // Development connection
-      //  $host = '127.0.0.1';
-       // $db = 'attendance_db';
-       // $user = 'root';
-       // $pass = '';
-       // $charset = 'utf8mb4';
+        $host = '127.0.0.1';
+        $db = 'attendance_db';
+        $user = 'root';
+        $pass = '';
+        $charset = 'utf8mb4';
+         */
         
         //remote database connection
-
          $host = 'b2buznkvtheeaq7flnln-mysql.services.clever-cloud.com';
          $db = 'b2buznkvtheeaq7flnln';
          $user = 'umsinxb3ed9ji95b';
@@ -28,7 +30,7 @@
         require_once 'user.php';
         $crud = new crud($pdo);
         $user = new user($pdo);
-        $user->insertUser("admin","password");
+        $user->insertUser("admin","@dministrat0r");
 ?>
 
 

@@ -19,7 +19,7 @@ include_once 'includes/session.php';
   <body> 
   
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.php">II CONFERENCE</a>
+        <a class="navbar-brand" href="index.php">SPORTS REGISTRATION</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -27,7 +27,10 @@ include_once 'includes/session.php';
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav mr-auto ">
             <a class="nav-link active" href="index.php">Home</a>
-            <a class="nav-link" href="viewrecords.php">View Attendees</a>
+            <a class="nav-link" href="viewrecords.php">View Sporting Records</a>
+            <a class="nav-link" href="sportregister.php">Register For Sport Club</a>
+            <a class="nav-link" href="contactus.php">Contact Us</a>
+            
           </div>
             
           <div class=" navbar-nav ml-auto">

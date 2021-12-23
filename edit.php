@@ -2,7 +2,6 @@
     $title = 'Edit Record';
     
     require_once 'includes/header.php'; 
-    require_once 'includes/auth_check.php';
 
     require_once 'db/conn.php'; 
     $result = $crud->getSpecialties();
@@ -21,7 +20,7 @@
     
 ?>
    
-         <h1 class="text-center">Edit Record</h1>
+         <h1 class="text-center">EDIT STUDENTS SPORTS RECORD</h1>
  
         <form method="post" action="editpost.php">
             <input type="hidden" name="id" value="<?php echo $attendee['attendee_id']?>" />
@@ -54,7 +53,7 @@
             </div>
             <div class="mb-3">
                 <label for="contact" class="form-label">Contact Number</label>
-                <input type="text" class="form-control" value="<?php echo $attendee['contactnumber']?>" id="contact" name="contact">
+                <input type="text" class="form-control" value="<?php echo $attendee['gender']?>" id="gender" name="gender">
             </div>
            <div class="d-grid gap-2">
             <button type="submit" class="btn btn-success " name="submit">Save Changes</button>
